@@ -12,7 +12,7 @@ class Aluno {
     private $trainningType;
     private $active;
     
-    function __construtor($id,$name, $birthday, $address, $cpf, $rg, $bloodType, $weight, $height, $trainningType){
+    function __construtor($id, $name, $birthday, $address, $cpf, $rg, $bloodType, $weight, $height, $trainningType){
         $this->id = $id;
         $this->name = $name;
         $this->birthday = $birthday;
