@@ -1,5 +1,5 @@
 <?php
-class Treinador {
+class Instructor extends Person {
     private $id;
     private $name;
     private $birthday;
@@ -12,7 +12,7 @@ class Treinador {
     private $students = [];
 
     function __construtor($id, $name, $birthday, $address, $cpf, $rg, $bloodType, $weight, $height){
-        $this->id = $id;
+        $this->id = 'T' + date("YmdHis");
         $this->name = $name;
         $this->birthday = $birthday;
         $this->address = $address;
@@ -92,8 +92,8 @@ class Treinador {
         return $this->students;
     }
 
-    public function removeStudent($id){
-        unset($id, $this->students);
+    public function removeStudent(Student $student){
+        unset($student, $this->students);
         return true;
     }
     

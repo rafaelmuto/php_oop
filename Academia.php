@@ -3,32 +3,50 @@ class Academia {
     private $name;
     private $address;
     private $numberOfStudents;
-    private $nuberOfTreinners;
+    private $nuberOfInstructors;
     private $students = [];
-    private $treinners = [];
+    private $instructors = [];
 
     function __constructor($name, $address){
         $this->name = $name;
         $this->address = $address;
     }
 
-    public function addStudent($id) {
+    public function addStudent(Person $person) {
         $this->numberOfStudents += 1;
-        array_push($this->students, $id);
+        array_push($this->students, $person);
     }
 
-    public function addTreinner() {
+    public function addInstructor(Person $person) {
         $this->numberOfTreinners += 1;
-        array_push($this->treinners, $id);
+        array_push($this->treinners, $person);
     }
 
-    public function removeStudent($id){
-        unset($id, $this->students);
+    public function getStudents(){
+        return $this->students;
+    }
+
+    public function getInstructos(){
+        return $this->instructors;
+    }
+
+    // return por filter via $id
+    public function getStudent($id){
+        
+    }
+
+    public function getInstructor($id){
+
+    }
+
+    //remover por filter dos arrays...
+    public function removeStudent(Person $person){
+        unset($person, $this->students);
         return true;
     }
 
-    public function removeTreinner($id){
-        unset($id, $this->treinner);
+    public function removeInstructor(Person $person){
+        unset($person, $this->treinner);
         return true;
     }
 

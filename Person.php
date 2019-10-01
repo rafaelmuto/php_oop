@@ -1,6 +1,5 @@
-<?php
-class Aluno {
-    private $id;
+<?php 
+class Person {
     private $name;
     private $birthday;
     private $address;
@@ -9,25 +8,16 @@ class Aluno {
     private $bloodType;
     private $weight;
     private $height;
-    private $trainningType;
-    private $active;
-    
-    function __construtor($id, $name, $birthday, $address, $cpf, $rg, $bloodType, $weight, $height, $trainningType){
-        $this->id = $id;
+
+    function __constructor($name, $birthday, $address, $cpf, $rg, $bloodType, $weight, $height){
         $this->name = $name;
         $this->birthday = $birthday;
         $this->address = $address;
-        $this->cpf = $cpf;
+        $this->cpf = $cpd;
         $this->rg = $rg;
         $this->bloodType = $bloodType;
         $this->weight = $weight;
         $this->height = $height;
-        $this->trainningType = $trainningType;
-        $this->active = true;
-    }
-
-    public function getId(){
-        return $this->id;
     }
 
     public function getName(){
@@ -62,10 +52,6 @@ class Aluno {
         return $this->height;
     }
 
-    public function getTrainningType(){
-        return $this->trainningType;
-    }
-
     public function setAddress($address){
         $this->address = $address;
     }
@@ -82,12 +68,7 @@ class Aluno {
         $this->height = $height;
     }
 
-    public function setTrainningType($type){
-        $this->trainningType = $type;
-    }
-
     public function getBMI(){
         return $this->weight / $this->height * $this->height;
     }
-
 }
