@@ -2,8 +2,6 @@
 class Academia {
     private $name;
     private $address;
-    private $numberOfStudents;
-    private $nuberOfInstructors;
     private $students = [];
     private $instructors = [];
 
@@ -13,13 +11,11 @@ class Academia {
     }
 
     public function addStudent(Person $person) {
-        $this->numberOfStudents += 1;
-        array_push($this->students, $person);
+        $this->students[$person->id] = $person;
     }
 
     public function addInstructor(Person $person) {
-        $this->numberOfTreinners += 1;
-        array_push($this->treinners, $person);
+        $this->instructors[$person->id] = $person;
     }
 
     public function getStudents(){
@@ -30,23 +26,23 @@ class Academia {
         return $this->instructors;
     }
 
-    // return por filter via $id
     public function getStudent($id){
-        
+        return $this->students[$id];
     }
 
     public function getInstructor($id){
-
+        return $this->instructors[$id];
     }
 
-    //remover por filter dos arrays...
-    public function removeStudent(Person $person){
-        unset($person, $this->students);
+    public function removeStudent($id){
+        $studentToRemove = $this->students[$id];
+        unset($studentToRemove, $this->students);
         return true;
     }
 
-    public function removeInstructor(Person $person){
-        unset($person, $this->treinner);
+    public function removeInstructor($id){
+        $instructorToRemove = $this->instructor[$id];
+        unset($instructorToRemove, $this->treinner);
         return true;
     }
 
