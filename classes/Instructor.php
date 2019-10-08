@@ -1,12 +1,18 @@
 <?php
-class Instructor extends Person {
+class Instructor extends Person implements Employee {
     private $id;
     private $students = [];
     private $active;
+    private $admissionDate;
+    private $salary;
+    private $position;
 
-    function __construtor($id, $name, $birthday, $address, $cpf, $rg, $bloodType, $weight, $height) {
-        $this->id = 'T' . date("YmdHis");
+    function __construtor($id, $name, $birthday, $address, $cpf, $rg, $bloodType, $weight, $height, $salary) {
+        $this->id = 'T' . date("YmdHis"); //id "unico"
         $this->active = true;
+        $this->admissionDate = date("Y/m/d");
+        $this->salary = $salary;
+        $this->position = 'Instructor';
 
         parent::__construtor($name, $birthday, $address, $cpf, $rg, $bloodType, $weight, $height);
     }
@@ -25,9 +31,36 @@ class Instructor extends Person {
     }
 
     public function removeStudent($id) {
-        $studentToRemove = $this->student[$id];
-        unset($studentToRemove, $this->students);
-        return true;
+        if (array_key_exists($id, $this->students)) {
+            $studentToRemove = $this->students[$id];
+            unset($studentToRemove, $this->students);
+            return true;
+        }
+        return false;
+    }
+
+    public function getAdmissionDate() {
+        return $this->admissionDate;
+    }
+
+    public function setSalary($value) {
+        if ($value > 0) {
+            $this->salary = $value;
+        }
+    }
+
+    public function getSalary() {
+        return $this->salary;
+    }
+
+    public function getPosition() {
+        return $this->position;
+    }
+
+    public function setPosition($position) {
+        if ($position != null || $position != '') {
+            $this->position = $position;
+        }
     }
 
 }

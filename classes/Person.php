@@ -2,6 +2,7 @@
 abstract class Person {
     private $name;
     private $birthday;
+    private $sex;
     private $address;
     private $cpf;
     private $rg;
@@ -9,9 +10,10 @@ abstract class Person {
     private $weight;
     private $height;
 
-    function __constructor($name, $birthday, $address, $cpf, $rg, $bloodType, $weight, $height) {
+    function __constructor($name, $birthday, $sex, $address, $cpf, $rg, $bloodType, $weight, $height) {
         $this->name = $name;
         $this->birthday = $birthday;
+        $this->sex = $sex;
         $this->address = $address;
         $this->cpf = $cpd;
         $this->rg = $rg;
