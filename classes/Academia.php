@@ -1,13 +1,12 @@
 <?php
-class Academia {
+class Gym extends Building {
     private $name;
-    private $address;
     private $students = [];
     private $instructors = [];
 
-    function __constructor($name, $address){
+    function __constructor($name, $street, $number, $postalCode) {
         $this->name = $name;
-        $this->address = $address;
+        parent::__constructior($street, $number, $postalCode);
     }
 
     public function addStudent(Person $person) {
@@ -18,29 +17,29 @@ class Academia {
         $this->instructors[$person->id] = $person;
     }
 
-    public function getStudents(){
+    public function getStudents() {
         return $this->students;
     }
 
-    public function getInstructos(){
+    public function getInstructos() {
         return $this->instructors;
     }
 
-    public function getStudent($id){
+    public function getStudent($id) {
         return $this->students[$id];
     }
 
-    public function getInstructor($id){
+    public function getInstructor($id) {
         return $this->instructors[$id];
     }
 
-    public function removeStudent($id){
+    public function removeStudent($id) {
         $studentToRemove = $this->students[$id];
         unset($studentToRemove, $this->students);
         return true;
     }
 
-    public function removeInstructor($id){
+    public function removeInstructor($id) {
         $instructorToRemove = $this->instructor[$id];
         unset($instructorToRemove, $this->treinner);
         return true;

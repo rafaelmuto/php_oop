@@ -1,5 +1,5 @@
-<?php 
-class Person {
+<?php
+abstract class Person {
     private $name;
     private $birthday;
     private $address;
@@ -9,7 +9,7 @@ class Person {
     private $weight;
     private $height;
 
-    function __constructor($name, $birthday, $address, $cpf, $rg, $bloodType, $weight, $height){
+    function __constructor($name, $birthday, $address, $cpf, $rg, $bloodType, $weight, $height) {
         $this->name = $name;
         $this->birthday = $birthday;
         $this->address = $address;
@@ -20,55 +20,55 @@ class Person {
         $this->height = $height;
     }
 
-    public function getName(){
+    public function getName() {
         return $this->name;
     }
 
-    public function getBirthday(){
+    public function getBirthday() {
         return $this->birthday;
     }
 
-    public function getAddress(){
+    public function getAddress() {
         return $this->address;
     }
 
-    public function getCpf(){
+    public function getCpf() {
         return $this->cpf;
     }
 
-    public function getRg(){
+    public function getRg() {
         return $this->rg;
     }
 
-    public function getBloodType(){
+    public function getBloodType() {
         return $this->bloodType;
     }
 
-    public function getWeight(){
+    public function getWeight() {
         return $this->weight;
     }
 
-    public function getHeight(){
+    public function getHeight() {
         return $this->height;
     }
 
-    public function setAddress($address){
+    public function setAddress($address) {
         $this->address = $address;
     }
 
-    public function setCpf($cpf){
+    public function setCpf($cpf) {
         $this->cpf = $cpf;
     }
 
-    public function setWeight($weight){
-       $this->weight = $weight;
+    public function setWeight($weight) {
+        $this->weight = $weight;
     }
 
-    public function setHeight($height){
+    public function setHeight($height) {
         $this->height = $height;
     }
 
-    public function getBMI(){
+    public function getBMI() {
         return $this->weight / $this->height * $this->height;
     }
 }

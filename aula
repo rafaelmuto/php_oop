@@ -4,9 +4,16 @@ abstract class Exemplo {
     abstract function
 }
 
-class => faz extends (so um)
+- classe
 
+abstract classes
+class => faz extends (so um)
+- nao tem atributos.
+
+
+object interfaces
 interface => faz implements (pode ter varios)
+- nao pode ter methodos nao abstratos.
 
 Design pattern:
 -delegator: o metodo da funcao extendida retorna o resultado do metodo de mesmo nome da classe extendida.
